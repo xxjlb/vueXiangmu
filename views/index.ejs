@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/admin/css/a.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="button" value="添加" id="add">
+
+    <script src="/admin/js/ajax.js"></script>
+
+    <script>
+      add.onclick=function(){
+        ajax({
+          url:'/admin/banner',
+          type:'post',
+          data:{title:'管理端的title'},
+          success:function(res){
+            console.log('管理端页面收到的',res)
+          }
+        })
+      }
+    </script>
+    
+  </body>
+</html>
